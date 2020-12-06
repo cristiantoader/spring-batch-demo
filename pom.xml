@@ -4,9 +4,38 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.ing.fmjavaguild</groupId>
     <artifactId>spring-batch-demo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <modules>
+        <module>sb-etl-csv-importer-demo</module>
+        <module>sb-etl-web</module>
+        <module>sb-etl-worker</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <guava.version>30.0-jre</guava.version>
+        <vavr.version>1.0.0-alpha-3</vavr.version>
+        <xstream.version>1.4.14</xstream.version>
+        <modelmapper.version>2.3.9</modelmapper.version>
+        <commons-text.version>1.9</commons-text.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.3.3.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
